@@ -1,37 +1,18 @@
-import { useState } from "react";
-import { register } from "./firebase";
+import React from "react";
 import { Toaster } from "react-hot-toast";
+import { Routes, Route } from "react-router-dom";
+import  Home  from "./pages/Home";
+import Register from "./pages/Register";
 
 function App() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const user = await register(email, password);
-    console.log(user);
-  };
   return (
-    <div>
-      <Toaster position="top-right"/>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Eposta"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <button type="submit" disabled={!email || !password}>
-          Kayıt
-        </button>
-      </form>
-    </div>
+    <>
+      <Toaster position="top-right" />
+      <Routes>
+        <Route path="/" element={<Home />}/>
+        <Route path="/register" element={<Register />}/>
+      </Routes>
+    </>
   );
 }
 
