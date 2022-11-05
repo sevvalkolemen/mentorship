@@ -1,16 +1,27 @@
 import React from "react";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { login } from "../firebase";
 import Navbar from "../component/Navbar";
+import { useDispatch } from "react-redux";
+import { login as loginHandle } from "../store/auth";
 
 function Login() {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const user = await login(email, password);
-    console.log(user);
+    if (user) {
+      dispatch(loginHandle(user));
+      navigate("/", {
+        replace: true,
+      });
+    }
   };
   return (
     <>
@@ -64,9 +75,7 @@ function Login() {
                 >
                   Login
                 </button>
-                <a href="#">
-                  Forgot Password ?
-                </a>
+                <a href="#">Forgot Password ?</a>
               </form>
             </div>
           </div>

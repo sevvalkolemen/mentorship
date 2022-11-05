@@ -1,10 +1,16 @@
-import React from 'react';
-import Navbar from '../component/Navbar';
+import React from "react";
+import Navbar from "../component/Navbar";
+import { useSelector } from "react-redux";
 
 function Home() {
-  return (
-    <Navbar />
-  )
+  const { user } = useSelector((state) => state.auth);
+  if (user) {
+    return (
+      <>
+        <Navbar />
+      </>
+    );
+  }
 }
 
-export default Home
+export default Home;
