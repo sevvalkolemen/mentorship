@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { register } from "../firebase";
-import Navbar from "../component/Navbar";
+import Navbar from "../components/Navbar";
 
 function Register() {
   const [email, setEmail] = useState("");

@@ -5,7 +5,12 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signOut,
+  onAuthStateChanged,
+  updateProfile,
+  updatePassword,
 } from "firebase/auth";
+import store from "./store";
+import { login as loginHandle, logout as logoutHandle } from "./store/auth";
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_API_KEY,
@@ -18,7 +23,7 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const auth = getAuth();
+export const auth = getAuth();
 
 export const register = async (email, password) => {
   try {
@@ -50,5 +55,40 @@ export const logout = async () => {
     toast.error(e.message);
   }
 };
+
+export const update = async data => {
+  try{
+    await updateProfile(auth.currentUser , data)
+    toast.success("Profile Updated");
+    return true
+  } catch(e) {
+    toast.error(e.message);
+  }
+}
+
+export const resetPassword = async password => {
+  try{
+    await updatePassword(auth.currentUser , password)
+    toast.success("Password Updated");
+    return true
+  } catch(e) {
+    toast.error(e.message);
+  }
+}
+
+// login and logout change control
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    store.dispatch(loginHandle({
+      displayName: user.displayName,
+      email: user.email,
+      emailVerified: user.emailVerified,
+      photoURL: user.photoURL,
+      uid: user.uid
+    }));
+  } else {
+  store.dispatch(logoutHandle());
+  }
+});
 
 export default app;

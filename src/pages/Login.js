@@ -2,13 +2,11 @@ import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { login } from "../firebase";
-import Navbar from "../component/Navbar";
-import { useDispatch } from "react-redux";
-import { login as loginHandle } from "../store/auth";
+import Navbar from "../components/Navbar";
 
 function Login() {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
+
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -17,7 +15,6 @@ function Login() {
     e.preventDefault();
     const user = await login(email, password);
     if (user) {
-      dispatch(loginHandle(user));
       navigate("/", {
         replace: true,
       });
