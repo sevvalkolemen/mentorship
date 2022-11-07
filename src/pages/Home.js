@@ -10,6 +10,7 @@ import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 import homeMentor1 from "../img/home/home-mentor1.jpg";
 import homeMentor2 from "../img/home/home-mentor2.jpg";
 import homeMentor3 from "../img/home/home-mentor3.jpg";
+import Footer from "../components/Footer";
 
 function Home() {
   return (
@@ -174,7 +175,7 @@ function Home() {
         </div>
       </div>
 
-      <div class="container px-4 py-5" id="hanging-icons">
+      <div class="container px-4 pb-5" id="hanging-icons">
         <h2 class="pb-2 border-bottom display-6 fw-bold lh-1 mb-3">
           Hanging icons
         </h2>
@@ -213,7 +214,7 @@ function Home() {
           </div>
           <div class="col d-flex align-items-start">
             <div class="fs-4 me-3">
-              <FontAwesomeIcon icon={faGlobe} className="fa-lg me-2" />
+              <FontAwesomeIcon icon={faGlobe} className="fa-xl me-2" />
             </div>
             <div>
               <h3 class="fs-2">Concat us</h3>
@@ -229,6 +230,7 @@ function Home() {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 }
