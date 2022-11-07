@@ -22,9 +22,9 @@ function Navbar() {
               </Link>
             </li>
             <li>
-              <a href="#" className="nav-link px-2 text-white me-2">
+              <Link to="/whatismentorship" className="nav-link px-2 text-white me-2">
                 What is Mentorship
-              </a>
+              </Link>
             </li>
             <li>
               <a href="#" className="nav-link px-2 text-white me-2">
