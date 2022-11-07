@@ -29,7 +29,7 @@ function Profile() {
       <>
         <Navbar />
         <div className="container mt-5">
-          <div className="p-2 mb-4 bg-light rounded-3">
+          <div className="p-2 mb-4 bg-secondary bg-opacity-10 rounded-3">
             <div className="container-fluid py-5">
               <h1 className="display-5 fw-bold text-center mb-5">
                 Profile Information
