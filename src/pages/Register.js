@@ -2,15 +2,22 @@ import React from "react";
 import { useState } from "react";
 import { register } from "../firebase";
 import Navbar from "../components/Navbar";
+import { useNavigate } from "react-router-dom";
 
 function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const navigate = useNavigate();
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const user = await register(email, password);
-    console.log(user);
+    if (user) {
+      navigate("/", {
+        replace: true,
+      });
+    }
   };
   return (
     <>
