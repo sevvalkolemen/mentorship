@@ -45,9 +45,9 @@ function Navbar() {
               </Link>
             </li>
             <li>
-              <a href="#" className="nav-link px-2 text-white me-2">
+              <Link to="/mentors" className="nav-link px-2 text-white me-2">
                 Mentors
-              </a>
+              </Link>
             </li>
             {user && (
               <li>

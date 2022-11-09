@@ -7,6 +7,8 @@ import { logout as logoutHandle } from "../store/auth";
 import { useSelector } from "react-redux";
 import UpdateProfile from "../components/UpdateProfile";
 import ChangePassword from "../components/ChangePassword";
+import Footer from "../components/Footer";
+import AddProfileInformation from "../components/AddProfileInformation";
 
 function Profile() {
   const navigate = useNavigate();
@@ -108,7 +110,9 @@ function Profile() {
               </div>
             </div>
           </div>
+          <AddProfileInformation />
         </div>
+        <Footer />
       </>
     );
   }

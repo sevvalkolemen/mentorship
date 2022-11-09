@@ -11,6 +11,13 @@ import {
 } from "firebase/auth";
 import store from "./store";
 import { login as loginHandle, logout as logoutHandle } from "./store/auth";
+import {
+  getFirestore,
+  collection,
+  addDoc,
+  onSnapshot,
+} from "firebase/firestore";
+import { setUsers } from "./store/users";
 
 const firebaseConfig = {
   apiKey: process.env.REACT_APP_API_KEY,
@@ -24,6 +31,7 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth();
+export const db = getFirestore(app);
 
 export const register = async (email, password) => {
   try {
@@ -56,39 +64,60 @@ export const logout = async () => {
   }
 };
 
-export const update = async data => {
-  try{
-    await updateProfile(auth.currentUser , data)
+export const update = async (data) => {
+  try {
+    await updateProfile(auth.currentUser, data);
     toast.success("Profile Updated");
-    return true
-  } catch(e) {
+    return true;
+  } catch (e) {
     toast.error(e.message);
   }
-}
+};
 
-export const resetPassword = async password => {
-  try{
-    await updatePassword(auth.currentUser , password)
+export const resetPassword = async (password) => {
+  try {
+    await updatePassword(auth.currentUser, password);
     toast.success("Password Updated");
-    return true
-  } catch(e) {
+    return true;
+  } catch (e) {
     toast.error(e.message);
   }
-}
+};
 
 // login and logout change control
 onAuthStateChanged(auth, (user) => {
   if (user) {
-    store.dispatch(loginHandle({
-      displayName: user.displayName,
-      email: user.email,
-      emailVerified: user.emailVerified,
-      photoURL: user.photoURL,
-      uid: user.uid
-    }));
+    store.dispatch(
+      loginHandle({
+        displayName: user.displayName,
+        email: user.email,
+        emailVerified: user.emailVerified,
+        photoURL: user.photoURL,
+        uid: user.uid,
+      })
+    );
   } else {
-  store.dispatch(logoutHandle());
+    store.dispatch(logoutHandle());
   }
+});
+
+export const addUser = async (data) => {
+  try {
+    const result = await addDoc(collection(db, "users"), data);
+    return result.id;
+  } catch (e) {
+    toast.error(e.message);
+  }
+};
+
+onSnapshot(collection(db, "users"), (doc) => {
+  store.dispatch(
+    setUsers(
+      doc.docs.reduce(
+        (users, user) => [...users, { ...user.data(), id: user.id }], []
+      )
+    )
+  );
 });
 
 export default app;
