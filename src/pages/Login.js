@@ -6,8 +6,6 @@ import Navbar from "../components/Navbar";
 
 function Login() {
   const navigate = useNavigate();
-
-
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -20,6 +18,7 @@ function Login() {
       });
     }
   };
+
   return (
     <>
       <Navbar />

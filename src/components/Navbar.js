@@ -49,11 +49,13 @@ function Navbar() {
                 Mentors
               </a>
             </li>
-            <li>
-              <Link to="/profile" className="nav-link px-2 text-white me-2">
-                Profile
-              </Link>
-            </li>
+            {user && (
+              <li>
+                <Link to="/profile" className="nav-link px-2 text-white me-2">
+                  Profile
+                </Link>
+              </li>
+            )}
             <li>
               <a href="#" className="nav-link px-2 text-white me-2">
                 Concat
