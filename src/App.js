@@ -8,6 +8,7 @@ import Register from "./pages/Register";
 import WhatIsMentorship from "./pages/WhatIsMentorship";
 import { useSelector } from "react-redux";
 import Mentors from "./pages/Mentors";
+import ApplytoMentorship from "./pages/ApplytoMentorship";
 
 function App() {
   const { user } = useSelector((state) => state.auth);
@@ -33,6 +34,7 @@ function App() {
         />
         <Route path="/whatismentorship" element={<WhatIsMentorship />} />
         <Route path="/mentors" element={<Mentors />} />
+        <Route path="/apply" element={<ApplytoMentorship />} />
       </Routes>
     </>
   );

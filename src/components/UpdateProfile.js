@@ -78,18 +78,18 @@ function UpdateProfile({ closeModal }) {
                 <label htmlFor="floatingInput">Name - Surname</label>
               </div>
               <div className="modal-footer">
-              <button
-                className="mb-2 btn btn-lg rounded-3 btn-primary "
-                type="submit"
-              >
-                Update
-              </button>
-              <button
-                className="mb-2 btn btn-lg rounded-3 btn-danger"
-                onClick={() => closeModal(false)}
-              >
-                Cancel
-              </button>
+                <button
+                  className="mb-2 btn btn-lg rounded-3 btn-primary "
+                  type="submit"
+                >
+                  Update
+                </button>
+                <button
+                  className="mb-2 btn btn-lg rounded-3 btn-danger"
+                  onClick={() => closeModal(false)}
+                >
+                  Cancel
+                </button>
               </div>
             </form>
           </div>

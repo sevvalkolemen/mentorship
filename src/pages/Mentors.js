@@ -1,8 +1,8 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
-import { deleteUser } from "../firebase";
 
 function Mentors() {
   const { users } = useSelector((state) => state.users);
@@ -24,12 +24,9 @@ function Mentors() {
               and mentors!
             </p>
             <p>
-              <a href="#" className="btn btn-primary m-2">
-                Main call to action
-              </a>
-              <a href="#" className="btn btn-secondary m-2">
-                Secondary action
-              </a>
+              <Link to="/apply" className="btn btn-primary m-2">
+              Apply for Mentorship
+              </Link>
             </p>
           </div>
         </div>
@@ -41,42 +38,19 @@ function Mentors() {
             {users.map((user) => (
               <div key={user.id} className="col">
                 <div className="card shadow-sm">
-                  <svg
-                    className="bd-placeholder-img card-img-top"
-                    width="100%"
-                    height="225"
-                    xmlns="http://www.w3.org/2000/svg"
-                    role="img"
-                    aria-label="Placeholder: Thumbnail"
-                    preserveAspectRatio="xMidYMid slice"
-                    focusable="false"
-                  >
-                    <title>Placeholder</title>
-                    <rect width="100%" height="100%" fill="#55595c"></rect>
-                    <text x="50%" y="50%" fill="#eceeef" dy=".3em">
-                      Thumbnail
-                    </text>
-                  </svg>
-
+                  <img
+                    className="car-img-top"
+                    style={{ height: "350px" }}
+                    src={user.img.downloadURL}
+                  />
                   <div className="card-body">
-                    <h3 className="text-center">{user.name}</h3>
+                    <h3 className="card-title text-center">{user.name}</h3>
                     <h6 className="text-center text-muted">{user.title}</h6>
                     <p className="card-text text-center">{user.description}</p>
                     <div className="d-flex justify-content-between align-items-center">
-                      <div class="btn-group">
-                        <button
-                          type="button"
-                          class="btn btn-sm btn-outline-secondary"
-                        >
-                          View
-                        </button>
-                        <button
-                          type="button"
-                          class="btn btn-sm btn-outline-secondary"
-                        >
-                          Edit
-                        </button>
-                      </div>
+                      <a href="#" class="btn btn-primary">
+                        Go somewhere
+                      </a>
                       <small className="text-muted">
                         {user.experience} year experience
                       </small>

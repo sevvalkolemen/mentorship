@@ -186,9 +186,9 @@ function HomeSection() {
                   We'll add onto it with another sentence and probably just keep
                   going until we run out of words.
                 </p>
-                <a href="#" className="btn btn-warning">
+                <Link to="/whatismentorship" className="btn btn-warning">
                   Learn More
-                </a>
+                </Link>
               </div>
             </div>
             <div className="col d-flex align-items-start">
@@ -196,15 +196,15 @@ function HomeSection() {
                 <FontAwesomeIcon icon={faPerson} className="fa-xl me-2" />
               </div>
               <div>
-                <h3 className="fs-2">Mentor</h3>
+                <h3 className="fs-2">Mentors</h3>
                 <p>
                   Paragraph of text beneath the heading to explain the heading.
                   We'll add onto it with another sentence and probably just keep
                   going until we run out of words.
                 </p>
-                <a href="#" className="btn btn-warning">
+                <Link to="/mentors" className="btn btn-warning">
                   Learn More
-                </a>
+                </Link>
               </div>
             </div>
             <div className="col d-flex align-items-start">
@@ -218,9 +218,9 @@ function HomeSection() {
                   We'll add onto it with another sentence and probably just keep
                   going until we run out of words.
                 </p>
-                <a href="#" className="btn btn-warning">
+                <Link to="/apply" className="btn btn-warning">
                   Learn More
-                </a>
+                </Link>
               </div>
             </div>
           </div>

@@ -73,9 +73,9 @@ function MentorshipSection() {
                     to the details.
                   </p>
                   <p>
-                    <a className="btn btn-lg btn-primary" href="#">
+                    <Link className="btn btn-lg btn-primary" to="/mentors">
                       Browse Gallery
-                    </a>
+                    </Link>
                   </p>
                 </div>
               </div>
@@ -95,9 +95,9 @@ function MentorshipSection() {
                     to the details.
                   </p>
                   <p>
-                    <a className="btn btn-lg btn-primary" href="#">
+                    <Link className="btn btn-lg btn-primary" to="/mentors">
                       Browse gallery
-                    </a>
+                    </Link>
                   </p>
                 </div>
               </div>
@@ -146,9 +146,9 @@ function MentorshipSection() {
                 support, and tips and tricks to applicants during the
                 application process.
               </p>
-              <button className="btn btn-outline-light" type="button">
+              <Link to="/apply" className="btn btn-outline-light" type="button">
                 Apply to be a mentor
-              </button>
+              </Link>
             </div>
           </div>
           <div className="col-md-6">
@@ -162,9 +162,6 @@ function MentorshipSection() {
                 makes a mentor, mentoring in the workplace, and how you can
                 launch a mentorship program.
               </p>
-              <button className="btn btn-outline-secondary" type="button">
-                Example button
-              </button>
             </div>
           </div>
         </div>
@@ -180,9 +177,6 @@ function MentorshipSection() {
                 rising talent. Mentors will become known as advisors that are
                 open to helping others.
               </p>
-              <button className="btn btn-outline-secondary" type="button">
-                Example button
-              </button>
             </div>
           </div>
           <div className="col-md-6">
@@ -195,9 +189,6 @@ function MentorshipSection() {
                 Providing these opportunities is key for organisations that want
                 to attract, retain and engage their talent.
               </p>
-              <button className="btn btn-outline-light" type="button">
-                Example button
-              </button>
             </div>
           </div>
         </div>

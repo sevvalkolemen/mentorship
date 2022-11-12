@@ -8,12 +8,12 @@ import { useSelector } from "react-redux";
 import UpdateProfile from "../components/UpdateProfile";
 import ChangePassword from "../components/ChangePassword";
 import Footer from "../components/Footer";
-import AddProfileInformation from "../components/AddProfileInformation";
 
 function Profile() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const { user } = useSelector((state) => state.auth);
+  
 
   const [openUpdateProfileModal, setOpenUpdateProfileModal] = useState(false);
   const [openChangePasswordModal, setChangePasswordModal] = useState(false);
@@ -110,7 +110,6 @@ function Profile() {
               </div>
             </div>
           </div>
-          <AddProfileInformation />
         </div>
         <Footer />
       </>
