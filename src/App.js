@@ -10,6 +10,7 @@ import { useSelector } from "react-redux";
 import Mentors from "./pages/Mentors";
 import ApplytoMentorship from "./pages/ApplytoMentorship";
 import Concat from "./pages/Concat";
+import NotFound from "./pages/NotFound";
 
 function App() {
   const { user } = useSelector((state) => state.auth);
@@ -37,6 +38,7 @@ function App() {
         <Route path="/mentors" element={<Mentors />} />
         <Route path="/apply" element={<ApplytoMentorship />} />
         <Route path="/concat" element={<Concat />} />
+        <Route path="/*" element={<NotFound />} />
       </Routes>
     </>
   );
