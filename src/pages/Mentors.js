@@ -47,10 +47,10 @@ function Mentors() {
                     <h3 className="card-title text-center">{user.name}</h3>
                     <h6 className="text-center text-muted">{user.title}</h6>
                     <p className="card-text text-center">{user.description}</p>
-                    <div className="d-flex justify-content-between align-items-center">
-                      <a href="#" class="btn btn-primary">
+                    <div className="d-flex justify-content-end align-items-center">
+                      {/* <a href="#" class="btn btn-primary">
                         Go somewhere
-                      </a>
+                      </a> */}
                       <small className="text-muted">
                         {user.experience} year experience
                       </small>

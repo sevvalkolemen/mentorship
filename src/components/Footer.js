@@ -1,9 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCode } from "@fortawesome/free-solid-svg-icons";
-import { BsInstagram } from "react-icons/bs";
-import { BsLinkedin } from "react-icons/bs";
-import { BsTwitter } from "react-icons/bs";
+import { BsGithub, BsLinkedin, BsTwitter } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
 function Footer() {
@@ -24,17 +22,17 @@ function Footer() {
 
         <ul className="nav col-md-4 justify-content-end list-unstyled d-flex">
           <li className="ms-3">
-            <a className="text-muted" href="#">
-              <BsInstagram className="fa-2x text-dark" />
+            <a className="text-muted" href="https://github.com/sevvalkolemen" target="_blank">
+              <BsGithub className="fa-2x text-dark" />
             </a>
           </li>
           <li className="ms-3">
-            <a className="text-muted" href="#">
+            <a className="text-muted" href="https://twitter.com/sevalkolemen" target="_blank">
               <BsTwitter className="fa-2x text-dark" />
             </a>
           </li>
           <li className="ms-3">
-            <a className="text-muted" href="#">
+            <a className="text-muted" href="https://www.linkedin.com/in/sevvalkolemen" target="_blank">
               <BsLinkedin className="fa-2x text-dark" />
             </a>
           </li>

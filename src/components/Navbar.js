@@ -57,9 +57,9 @@ function Navbar() {
               </li>
             )}
             <li>
-              <a href="#" className="nav-link px-2 text-white me-2">
+              <Link to="/concat" className="nav-link px-2 text-white me-2">
                 Concat
-              </a>
+              </Link>
             </li>
           </ul>
 
