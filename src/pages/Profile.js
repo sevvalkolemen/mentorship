@@ -1,30 +1,15 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
-import { logout } from "../firebase";
-import { logout as logoutHandle } from "../store/auth";
 import { useSelector } from "react-redux";
 import UpdateProfile from "../components/UpdateProfile";
 import ChangePassword from "../components/ChangePassword";
 import Footer from "../components/Footer";
 
 function Profile() {
-  const navigate = useNavigate();
-  const dispatch = useDispatch();
   const { user } = useSelector((state) => state.auth);
-  
 
   const [openUpdateProfileModal, setOpenUpdateProfileModal] = useState(false);
   const [openChangePasswordModal, setChangePasswordModal] = useState(false);
-
-  const handleLogout = async () => {
-    await logout();
-    dispatch(logoutHandle());
-    navigate("/login", {
-      replace: true,
-    });
-  };
 
   if (user) {
     return (
@@ -72,7 +57,7 @@ function Profile() {
                       </div>
                     </div>
                     <div className="row mt-5">
-                      <div className="col-sm-4">
+                      <div className="col-sm-6">
                         <button
                           onClick={() => setOpenUpdateProfileModal(true)}
                           className="btn btn-success"
@@ -85,7 +70,7 @@ function Profile() {
                           />
                         )}
                       </div>
-                      <div className="col-sm-4">
+                      <div className="col-sm-6">
                         <button
                           onClick={() => setChangePasswordModal(true)}
                           className="btn btn-warning"
@@ -95,14 +80,6 @@ function Profile() {
                         {openChangePasswordModal && (
                           <ChangePassword closeModal={setChangePasswordModal} />
                         )}
-                      </div>
-                      <div className="col-sm-4">
-                        <button
-                          onClick={handleLogout}
-                          className="btn btn-danger"
-                        >
-                          Log out
-                        </button>
                       </div>
                     </div>
                   </div>
