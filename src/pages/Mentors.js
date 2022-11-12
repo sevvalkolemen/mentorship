@@ -25,7 +25,7 @@ function Mentors() {
             </p>
             <p>
               <Link to="/apply" className="btn btn-primary m-2">
-              Apply for Mentorship
+                Apply for Mentorship
               </Link>
             </p>
           </div>

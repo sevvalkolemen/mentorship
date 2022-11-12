@@ -32,7 +32,7 @@ function Concat() {
           marginheight="0"
           marginwidth="0"
         >
-          Yükleniyor…
+          Loading…
         </iframe>
       </div>
 

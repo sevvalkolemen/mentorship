@@ -30,7 +30,7 @@ function Profile() {
     return (
       <>
         <Navbar />
-        <div className="container mt-5">
+        <div className="container mt-5" style={{height: "850px"}}>
           <div className="p-2 mb-4 bg-secondary bg-opacity-10 rounded-3">
             <div className="container-fluid py-5">
               <h1 className="display-5 fw-bold text-center mb-5">
