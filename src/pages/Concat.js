@@ -1,11 +1,8 @@
 import React from "react";
-import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
 
 function Concat() {
   return (
     <>
-      <Navbar />
       <section className="container py-5 text-center">
         <div className="row py-lg-5">
           <div className="col-lg-6 col-md-8 mx-auto">
@@ -35,8 +32,6 @@ function Concat() {
           Loading…
         </iframe>
       </div>
-
-      <Footer />
     </>
   );
 }

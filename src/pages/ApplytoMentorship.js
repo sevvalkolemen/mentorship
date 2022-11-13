@@ -1,16 +1,8 @@
-import React from 'react'
-import Footer from '../components/Footer'
-import MentorshipInformation from '../components/MentorshipInformation'
-import Navbar from '../components/Navbar'
+import React from "react";
+import MentorshipInformation from "../components/MentorshipInformation";
 
 function ApplytoMentorship() {
-  return (
-    <>
-    <Navbar />
-    <MentorshipInformation />
-    <Footer />
-    </>
-  )
+  return <MentorshipInformation />;
 }
 
-export default ApplytoMentorship
+export default ApplytoMentorship;

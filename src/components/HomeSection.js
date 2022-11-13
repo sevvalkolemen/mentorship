@@ -13,8 +13,8 @@ import homeMentor3 from "../img/home/home-mentor3.jpg";
 function HomeSection() {
   return (
     <>
-      <div className="container px-4 bg-secondary bg-opacity-10 mt-5 rounded-3 col-xxl-8 py-5">
-        <div className="row flex-lg-row-reverse align-items-center g-5 py-5">
+      <div className="container px-4 py-5 bg-secondary bg-opacity-10 mt-5 rounded-3">
+        <div className="row flex-lg-row-reverse align-items-center g-5">
           <div className="col-10 col-sm-8 col-lg-6">
             <img
               src={mentor}
@@ -50,7 +50,7 @@ function HomeSection() {
         </div>
       </div>
 
-      <div className="container px-4 py-5" id="custom-cards">
+      <div className="container py-5" id="custom-cards">
         <h2 className="pb-2 border-bottom display-6 fw-bold lh-1 mb-3">
           Some of our works
         </h2>

@@ -1,6 +1,4 @@
 import React, { useState } from "react";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
 import { Link } from "react-router-dom";
 import { forgotPassword } from "../firebase";
 
@@ -13,7 +11,6 @@ function ForgotPassword() {
   };
   return (
     <>
-      <Navbar />
       <div
         className="modal modal-signin position-static d-block py-5"
         tabIndex="-1"
@@ -60,7 +57,6 @@ function ForgotPassword() {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 }

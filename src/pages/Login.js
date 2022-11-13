@@ -2,7 +2,6 @@ import React from "react";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { login } from "../firebase";
-import Navbar from "../components/Navbar";
 
 function Login() {
   const navigate = useNavigate();
@@ -20,8 +19,7 @@ function Login() {
   };
 
   return (
-    <>
-      <Navbar />
+    <div>
       <div
         className="modal modal-signin position-static d-block py-5"
         tabIndex="-1"
@@ -72,15 +70,15 @@ function Login() {
                   Login
                 </button>
                 <div className="d-flex justify-content-between align-items-center mt-2">
-                <Link to="/forgotpassword">Forgot Password?</Link>
-                <Link to="/register">Don't have an account? Signup.</Link>
+                  <Link to="/forgotpassword">Forgot Password?</Link>
+                  <Link to="/register">Don't have an account? Signup.</Link>
                 </div>
               </form>
             </div>
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

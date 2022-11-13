@@ -1,15 +1,12 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
 
 function Mentors() {
   const { users } = useSelector((state) => state.users);
 
   return (
     <>
-      <Navbar />
       <section className="container py-5 text-center">
         <div className="row py-lg-5">
           <div className="col-lg-6 col-md-8 mx-auto">
@@ -62,7 +59,6 @@ function Mentors() {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 }

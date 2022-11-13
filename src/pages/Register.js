@@ -1,7 +1,6 @@
 import React from "react";
 import { useState } from "react";
 import { register } from "../firebase";
-import Navbar from "../components/Navbar";
 import { Link, useNavigate } from "react-router-dom";
 
 function Register() {
@@ -21,7 +20,6 @@ function Register() {
   
   return (
     <>
-      <Navbar />
       <div
         className="modal modal-signin position-static d-block py-5"
         tabIndex="-1"
