@@ -11,6 +11,7 @@ import Mentors from "./pages/Mentors";
 import ApplytoMentorship from "./pages/ApplytoMentorship";
 import Concat from "./pages/Concat";
 import NotFound from "./pages/NotFound";
+import ForgotPassword from "./pages/ForgotPassword";
 
 function App() {
   const { user } = useSelector((state) => state.auth);
@@ -26,6 +27,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/forgotpassword" element={<ForgotPassword />} />
         <Route
           path="/profile"
           element={

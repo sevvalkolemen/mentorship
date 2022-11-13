@@ -8,6 +8,7 @@ import {
   onAuthStateChanged,
   updateProfile,
   updatePassword,
+  sendPasswordResetEmail,
 } from "firebase/auth";
 import store from "./store";
 import { login as loginHandle, logout as logoutHandle } from "./store/auth";
@@ -86,6 +87,16 @@ export const resetPassword = async (password) => {
   }
 };
 
+export const forgotPassword = async (email) => {
+  try {
+    await sendPasswordResetEmail(auth, email);
+    toast.success("Check your email address");
+    return true;
+  } catch (e) {
+    toast.error(e.message);
+  }
+};
+
 // login and logout change control
 onAuthStateChanged(auth, (user) => {
   if (user) {
@@ -116,7 +127,8 @@ onSnapshot(collection(db, "users"), (doc) => {
   store.dispatch(
     setUsers(
       doc.docs.reduce(
-        (users, user) => [...users, { ...user.data(), id: user.id }], []
+        (users, user) => [...users, { ...user.data(), id: user.id }],
+        []
       )
     )
   );

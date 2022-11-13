@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { login } from "../firebase";
 import Navbar from "../components/Navbar";
 
@@ -71,7 +71,10 @@ function Login() {
                 >
                   Login
                 </button>
-                <a href="#">Forgot Password ?</a>
+                <div className="d-flex justify-content-between align-items-center mt-2">
+                <Link to="/forgotpassword">Forgot Password?</Link>
+                <Link to="/register">Don't have an account? Signup.</Link>
+                </div>
               </form>
             </div>
           </div>
