@@ -21,19 +21,7 @@ function Profile() {
               <h1 className="display-5 fw-bold text-center mb-5">
                 Profile Information
               </h1>
-              <div className="row">
-                <div className="col-md-6 text-center">
-                  {user.photoURL && (
-                    <img
-                      src={user.photoURL}
-                      className="rounded"
-                      style={{ width: "280px" }}
-                      alt={user.displayName}
-                    />
-                  )}
-                </div>
-                <div className="col-md-6">
-                  <div className="card-block">
+                  <div className="card-block ms-5">
                     <div className="row">
                       <div className="col-sm-6">
                         <h5>Name-Surname</h5>
@@ -48,12 +36,8 @@ function Profile() {
                     </div>
                     <div className="row mt-5">
                       <div className="col-sm-6">
-                        <h5>Photo URL</h5>
-                        <h6 className="text-muted f-w-400">photoURL</h6>
-                      </div>
-                      <div className="col-sm-6">
                         <h5>Password</h5>
-                        <h6 className="text-muted f-w-400">{user.password}</h6>
+                        <h6 className="text-muted f-w-400">*******</h6>
                       </div>
                     </div>
                     <div className="row mt-5">
@@ -83,11 +67,14 @@ function Profile() {
                       </div>
                     </div>
                   </div>
+
+                  
                 </div>
               </div>
-            </div>
-          </div>
+
         </div>
+
+
         <Footer />
       </>
     );

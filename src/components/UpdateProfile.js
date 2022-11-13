@@ -8,13 +8,11 @@ function UpdateProfile({ closeModal }) {
   const { user } = useSelector((state) => state.auth);
 
   const [displayName, setDisplayName] = useState(user.displayName || "");
-  const [avatar, setAvatar] = useState(user.photoURL || "");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     await update({
-      displayName,
-      photoURL: avatar,
+      displayName
     });
     dispatch(
       login({
@@ -61,17 +59,6 @@ function UpdateProfile({ closeModal }) {
                   type="text"
                   className="form-control rounded-3"
                   placeholder="John Doe"
-                  value={avatar}
-                  onChange={(e) => setAvatar(e.target.value)}
-                />
-                <label htmlFor="floatingInput">Profile Picture</label>
-              </div>
-
-              <div className="form-floating mb-3">
-                <input
-                  type="text"
-                  className="form-control rounded-3"
-                  placeholder="John Doe"
                   value={displayName}
                   onChange={(e) => setDisplayName(e.target.value)}
                 />
@@ -81,6 +68,7 @@ function UpdateProfile({ closeModal }) {
                 <button
                   className="mb-2 btn btn-lg rounded-3 btn-primary "
                   type="submit"
+                  disabled={!displayName}
                 >
                   Update
                 </button>
