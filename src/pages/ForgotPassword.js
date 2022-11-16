@@ -15,6 +15,7 @@ function ForgotPassword() {
         className="modal modal-signin position-static d-block py-5"
         tabIndex="-1"
         role="dialog"
+        style={{ height: "550px" }}
         id="modalSignin"
       >
         <div className="modal-dialog" role="document">
